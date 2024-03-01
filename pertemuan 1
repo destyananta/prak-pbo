@@ -1,0 +1,15 @@
+a = int(input("batas bawah: "))
+b = int(input("batas atas: "))
+
+sum_ganjil = 0
+i = a
+
+if a >= 0 and b >= 0:
+    while i < b:
+        if i % 2 != 0:
+            sum_ganjil += i
+            print(i)
+        i += 1
+    print(f"Total: {sum_ganjil}")
+else:
+    print("Batas atas dan batas bawah yang dimasukkan tidak boleh di bawah nol")
