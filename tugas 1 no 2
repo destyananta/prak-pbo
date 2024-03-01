@@ -1,0 +1,13 @@
+pi = 3.14
+
+while True:
+    R = float(input("Input jari-jari lingkaran: "))
+    if R <= 0:
+        print("Jari-jari lingkaran tidak boleh negatif.")
+    else:
+        Luas = R**2 * pi
+        Keliling = 2 * pi * R
+        print(f"Luas: {Luas}")
+        print(f"Keliling: {Keliling}")
+        break
+
