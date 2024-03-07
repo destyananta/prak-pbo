@@ -1,0 +1,26 @@
+class TiketPesawat:
+    def __init__(self, maskapai, tujuan, tanggal, harga):
+        self.maskapai = maskapai
+        self.tujuan = tujuan
+        self.tanggal = tanggal
+        self.harga = harga
+        print(f"Tiket pesawat {self.maskapai} menuju {self.tujuan} pada tanggal {self.tanggal} dengan harga {self.harga} telah dipesan.")
+
+    def display_details(self):
+        print(f"Maskapai: {self.maskapai}\nTujuan: {self.tujuan}\nTanggal: {self.tanggal}\nHarga: {self.harga}")
+
+    def pesan_tiket_decorator(func):
+        def wrapper(*args, **kwargs):
+            print("Pemesanan tiket pesawat berhasil:")
+            return func(*args, **kwargs)
+        return wrapper
+
+    display_details = pesan_tiket_decorator(display_details)
+
+    def __del__(self):
+        print(f"Tiket pesawat {self.maskapai} menuju {self.tujuan} pada tanggal {self.tanggal} telah dibatalkan.")
+
+tiket1 = TiketPesawat("Garuda Indonesia", "Bali", "2024-05-10", "Rp 1.500.000")
+tiket1.display_details()
+
+del tiket1
